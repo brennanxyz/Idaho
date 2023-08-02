@@ -10,7 +10,7 @@ pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     let camera = Camera2dBundle::default();
     commands.spawn(camera);
 
-    let ldtk_handle = asset_server.load("Typical_2D_platformer_example.ldtk");
+    let ldtk_handle = asset_server.load("Idaho.ldtk");
     commands.spawn(LdtkWorldBundle {
         ldtk_handle,
         ..Default::default()
