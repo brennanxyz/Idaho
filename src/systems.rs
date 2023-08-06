@@ -6,7 +6,7 @@ use std::collections::{HashMap, HashSet};
 
 use bevy_rapier2d::prelude::*;
 
-pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
+pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut texture_atlases: ResMut<Assets<TextureAtlas>>,) {
     let camera = Camera2dBundle::default();
     commands.spawn(camera);
 
@@ -31,26 +31,44 @@ pub fn dbg_player_items(
 
 pub fn movement(
     input: Res<Input<KeyCode>>,
-    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection), With<Player>>,
+    asset_server: Res<AssetServer>,
+    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection,), With<Player>>,
 ) {
+    // let texture_handle = asset_server.load("main_char_sheet.png");
+    // let texture_atlas = TextureAtlas::from_grid(texture_handle, Vec2::new(20., 20.), 4, 8, None, None);
+
     for (mut velocity, mut climber, ground_detection) in &mut query {
         let right = if input.pressed(KeyCode::D) { 1. } else { 0. };
         let left = if input.pressed(KeyCode::A) { 1. } else { 0. };
 
-        velocity.linvel.x = (right - left) * 200.;
+        velocity.linvel.x = (right - left) * 100.;
 
-        if climber.intersecting_climbables.is_empty() {
-            climber.climbing = false;
-        } else if input.just_pressed(KeyCode::W) || input.just_pressed(KeyCode::S) {
-            climber.climbing = true;
-        }
+        climber.climbing = true;
+
+        // tas
+
+        // if climber.intersecting_climbables.is_empty() {
+        //     climber.climbing = false;
+        // } else if input.just_pressed(KeyCode::W) || input.just_pressed(KeyCode::S) {
+        //     climber.climbing = true;
+        // }
 
         if climber.climbing {
             let up = if input.pressed(KeyCode::W) { 1. } else { 0. };
             let down = if input.pressed(KeyCode::S) { 1. } else { 0. };
 
-            velocity.linvel.y = (up - down) * 200.;
+            velocity.linvel.y = (up - down) * 100.;
         }
+
+        // if input.pressed(KeyCode::W) {
+        //     tas.index = 0;
+        // } else if input.pressed(KeyCode::S) {
+        //     tas.index = 1;
+        // } else if input.pressed(KeyCode::D) {
+        //     tas.index = 2;
+        // } else if input.pressed(KeyCode::A) {
+        //     tas.index = 3;
+        // }
 
         if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
             velocity.linvel.y = 500.;

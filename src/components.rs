@@ -103,9 +103,9 @@ pub struct Climber {
 
 #[derive(Clone, Default, Bundle, LdtkEntity)]
 pub struct PlayerBundle {
-    #[sprite_bundle("main_char.png")]
+    #[sprite_sheet_bundle("main_char_sheet.png", 20., 20., 4, 8, 0., 0., 0)]
     #[bundle]
-    pub sprite_bundle: SpriteBundle,
+    pub sprite_sheet_bundle: SpriteSheetBundle,
     #[from_entity_instance]
     #[bundle]
     pub collider_bundle: ColliderBundle,
