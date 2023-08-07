@@ -6,7 +6,10 @@ use std::collections::{HashMap, HashSet};
 
 use bevy_rapier2d::prelude::*;
 
-pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>, mut texture_atlases: ResMut<Assets<TextureAtlas>>,) {
+#[derive(Component, Deref, DerefMut)]
+pub struct AnimationTimer(Timer);
+
+pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>,) {
     let camera = Camera2dBundle::default();
     commands.spawn(camera);
 
@@ -31,49 +34,59 @@ pub fn dbg_player_items(
 
 pub fn movement(
     input: Res<Input<KeyCode>>,
-    asset_server: Res<AssetServer>,
-    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection,), With<Player>>,
+    time: Res<Time>,
+    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection, &mut TextureAtlasSprite,), With<Player>>,
 ) {
     // let texture_handle = asset_server.load("main_char_sheet.png");
     // let texture_atlas = TextureAtlas::from_grid(texture_handle, Vec2::new(20., 20.), 4, 8, None, None);
+    // let mut timer = AnimationTimer(Timer::from_seconds(0.1, TimerMode::Repeating));
 
-    for (mut velocity, mut climber, ground_detection) in &mut query {
+    for (mut velocity, mut climber, ground_detection, mut tas,) in &mut query {
+        let up = if input.pressed(KeyCode::W) { 1. } else { 0. };
+        let down = if input.pressed(KeyCode::S) { 1. } else { 0. };
         let right = if input.pressed(KeyCode::D) { 1. } else { 0. };
         let left = if input.pressed(KeyCode::A) { 1. } else { 0. };
 
         velocity.linvel.x = (right - left) * 100.;
+        velocity.linvel.y = (up - down) * 100.;
 
         climber.climbing = true;
 
-        // tas
 
-        // if climber.intersecting_climbables.is_empty() {
-        //     climber.climbing = false;
-        // } else if input.just_pressed(KeyCode::W) || input.just_pressed(KeyCode::S) {
-        //     climber.climbing = true;
-        // }
+        // println!("{:?}", timer.0.;
 
-        if climber.climbing {
-            let up = if input.pressed(KeyCode::W) { 1. } else { 0. };
-            let down = if input.pressed(KeyCode::S) { 1. } else { 0. };
-
-            velocity.linvel.y = (up - down) * 100.;
+        if input.pressed(KeyCode::W) && input.pressed(KeyCode::D) {
+            animate(20, 23, &mut tas);
+        } else if input.pressed(KeyCode::W) && input.pressed(KeyCode::A) {
+            animate(12, 15, &mut tas);
+        } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::D) {
+            animate(28, 31, &mut tas);
+        } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::A) {
+            animate(4, 7, &mut tas);
+        } else if input.pressed(KeyCode::W) {
+            animate(16, 19, &mut tas);
+        } else if input.pressed(KeyCode::S) {
+            animate(0, 3, &mut tas);
+        } else if input.pressed(KeyCode::D) {
+            animate(24, 27, &mut tas);
+        } else if input.pressed(KeyCode::A) {
+            animate(8, 11, &mut tas);
         }
-
-        // if input.pressed(KeyCode::W) {
-        //     tas.index = 0;
-        // } else if input.pressed(KeyCode::S) {
-        //     tas.index = 1;
-        // } else if input.pressed(KeyCode::D) {
-        //     tas.index = 2;
-        // } else if input.pressed(KeyCode::A) {
-        //     tas.index = 3;
-        // }
 
         if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
             velocity.linvel.y = 500.;
             climber.climbing = false;
         }
+    }
+}
+
+
+
+fn animate(start_frame: usize, end_frame: usize, tas: &mut TextureAtlasSprite,) {
+    if tas.index < start_frame || tas.index > end_frame {
+        tas.index = start_frame;
+    } else {
+        tas.index += 1;
     }
 }
 
