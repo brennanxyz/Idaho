@@ -75,7 +75,7 @@ pub fn movement(
 
         if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
             velocity.linvel.y = 500.;
-            climber.climbing = false;
+            // climber.climbing = false;
         }
     }
 }
@@ -83,7 +83,7 @@ pub fn movement(
 
 
 fn animate(start_frame: usize, end_frame: usize, tas: &mut TextureAtlasSprite,) {
-    if tas.index < start_frame || tas.index > end_frame {
+    if tas.index < start_frame || tas.index > end_frame || tas.index == end_frame {
         tas.index = start_frame;
     } else {
         tas.index += 1;
