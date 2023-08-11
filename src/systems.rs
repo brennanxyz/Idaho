@@ -6,8 +6,10 @@ use std::collections::{HashMap, HashSet};
 
 use bevy_rapier2d::prelude::*;
 
-#[derive(Component, Deref, DerefMut)]
-pub struct AnimationTimer(Timer);
+#[derive(Resource)]
+pub struct AnimationTimer {
+    pub timer: Timer,
+}
 
 pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>,) {
     let camera = Camera2dBundle::default();
@@ -18,6 +20,8 @@ pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>,) {
         ldtk_handle,
         ..Default::default()
     });
+
+    commands.insert_resource(AnimationTimer{ timer: Timer::from_seconds(0.1, TimerMode::Repeating)});
 }
 
 pub fn dbg_player_items(
@@ -35,7 +39,8 @@ pub fn dbg_player_items(
 pub fn movement(
     input: Res<Input<KeyCode>>,
     time: Res<Time>,
-    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection, &mut TextureAtlasSprite,), With<Player>>,
+    mut config: ResMut<AnimationTimer>,
+    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection, &mut TextureAtlasSprite, ), With<Player>>,
 ) {
     // let texture_handle = asset_server.load("main_char_sheet.png");
     // let texture_atlas = TextureAtlas::from_grid(texture_handle, Vec2::new(20., 20.), 4, 8, None, None);
@@ -52,25 +57,26 @@ pub fn movement(
 
         climber.climbing = true;
 
-
+        config.timer.tick(time.delta());
+        let update: bool = config.timer.just_finished();
         // println!("{:?}", timer.0.;
 
         if input.pressed(KeyCode::W) && input.pressed(KeyCode::D) {
-            animate(20, 23, &mut tas);
+            animate(20, 23, &mut tas, &update);
         } else if input.pressed(KeyCode::W) && input.pressed(KeyCode::A) {
-            animate(12, 15, &mut tas);
+            animate(12, 15, &mut tas, &update);
         } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::D) {
-            animate(28, 31, &mut tas);
+            animate(28, 31, &mut tas, &update);
         } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::A) {
-            animate(4, 7, &mut tas);
+            animate(4, 7, &mut tas, &update);
         } else if input.pressed(KeyCode::W) {
-            animate(16, 19, &mut tas);
+            animate(16, 19, &mut tas, &update);
         } else if input.pressed(KeyCode::S) {
-            animate(0, 3, &mut tas);
+            animate(0, 3, &mut tas, &update);
         } else if input.pressed(KeyCode::D) {
-            animate(24, 27, &mut tas);
+            animate(24, 27, &mut tas, &update);
         } else if input.pressed(KeyCode::A) {
-            animate(8, 11, &mut tas);
+            animate(8, 11, &mut tas, &update);
         }
 
         if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
@@ -80,12 +86,10 @@ pub fn movement(
     }
 }
 
-
-
-fn animate(start_frame: usize, end_frame: usize, tas: &mut TextureAtlasSprite,) {
-    if tas.index < start_frame || tas.index > end_frame || tas.index == end_frame {
+fn animate(start_frame: usize, end_frame: usize, tas: &mut TextureAtlasSprite, update: &bool) {
+    if (tas.index < start_frame || tas.index > end_frame || tas.index == end_frame) && update == &true {
         tas.index = start_frame;
-    } else {
+    } else if update == &true {
         tas.index += 1;
     }
 }

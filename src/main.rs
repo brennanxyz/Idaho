@@ -2,6 +2,7 @@
 // Please run with `--release`.
 
 use bevy::prelude::*;
+use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 use bevy_ecs_ldtk::prelude::*;
 
 use bevy_rapier2d::prelude::*;
@@ -9,11 +10,14 @@ use bevy_rapier2d::prelude::*;
 mod components;
 mod systems;
 
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
         .add_plugin(LdtkPlugin)
         .add_plugin(RapierPhysicsPlugin::<NoUserData>::pixels_per_meter(100.0))
+        .add_plugin(LogDiagnosticsPlugin::default())
+        .add_plugin(FrameTimeDiagnosticsPlugin::default())
         // Required to prevent race conditions between bevy_ecs_ldtk's and bevy_rapier's systems
         .configure_set(LdtkSystemSet::ProcessApi.before(PhysicsSet::SyncBackend))
         .insert_resource(RapierConfiguration {
