@@ -21,7 +21,7 @@ fn main() {
         // Required to prevent race conditions between bevy_ecs_ldtk's and bevy_rapier's systems
         .configure_set(LdtkSystemSet::ProcessApi.before(PhysicsSet::SyncBackend))
         .insert_resource(RapierConfiguration {
-            gravity: Vec2::new(0.0, -2000.0),
+            gravity: Vec2::new(0.0, 0.0),
             ..Default::default()
         })
         .insert_resource(LevelSelection::Uid(0))
@@ -35,15 +35,9 @@ fn main() {
         .add_startup_system(systems::setup)
         .add_system(systems::spawn_wall_collision)
         .add_system(systems::movement)
-        .add_system(systems::detect_climb_range)
-        .add_system(systems::ignore_gravity_if_climbing)
-        .add_system(systems::patrol)
         .add_system(systems::camera_fit_inside_current_level)
         .add_system(systems::update_level_selection)
         .add_system(systems::dbg_player_items)
-        .add_system(systems::spawn_ground_sensor)
-        .add_system(systems::ground_detection)
-        .add_system(systems::update_on_ground)
         .add_system(systems::restart_level)
         .register_ldtk_int_cell::<components::WallBundle>(1)
         .register_ldtk_int_cell::<components::LadderBundle>(2)

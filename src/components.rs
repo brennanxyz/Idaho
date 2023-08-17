@@ -11,7 +11,7 @@ pub struct ColliderBundle {
     pub rigid_body: RigidBody,
     pub velocity: Velocity,
     pub rotation_constraints: LockedAxes,
-    pub gravity_scale: GravityScale,
+    // pub gravity_scale: GravityScale,
     pub friction: Friction,
     pub density: ColliderMassProperties,
 }
@@ -30,7 +30,7 @@ impl From<&EntityInstance> for ColliderBundle {
 
         match entity_instance.identifier.as_ref() {
             "Player" => ColliderBundle {
-                collider: Collider::cuboid(6., 14.),
+                collider: Collider::cuboid(6., 8.),
                 rigid_body: RigidBody::Dynamic,
                 friction: Friction {
                     coefficient: 0.0,
@@ -49,7 +49,7 @@ impl From<&EntityInstance> for ColliderBundle {
                 collider: Collider::cuboid(8., 8.),
                 rigid_body: RigidBody::Dynamic,
                 rotation_constraints,
-                gravity_scale: GravityScale(1.0),
+                // gravity_scale: GravityScale(0.0),
                 friction: Friction::new(0.5),
                 density: ColliderMassProperties::Density(15.0),
                 ..Default::default()
