@@ -12,8 +12,18 @@ mod systems;
 
 
 fn main() {
+    // let mut window_plugin = WindowPlugin::default();
+    // window_plugin.primary_window = Some(Window {
+    //     title: "Game".to_string(),
+    //     canvas: Some("#game_canvas".to_string()),
+    //     ..Default::default()
+    // });
+    // let w_plugins = DefaultPlugins.set(window_plugin);
+    // w_plugins.add(ImagePlugin::default_nearest());
+
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
+        // .add_plugins(w_plugins)
         .add_plugin(LdtkPlugin)
         .add_plugin(RapierPhysicsPlugin::<NoUserData>::pixels_per_meter(100.0))
         // .add_plugin(LogDiagnosticsPlugin::default())
