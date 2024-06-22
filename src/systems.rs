@@ -6,6 +6,19 @@ use std::collections::{HashMap, HashSet};
 
 use bevy_rapier2d::prelude::*;
 
+#[derive(Eq, PartialEq)]
+pub enum CharacterDirection {
+    N,
+    NE,
+    E,
+    SE,
+    S,
+    SW,
+    W,
+    NW,
+    LAST,
+}
+
 #[derive(Resource)]
 pub struct AnimationTimer {
     pub timer: Timer,
@@ -48,31 +61,98 @@ pub fn movement(
         let right = if input.pressed(KeyCode::D) { 1. } else { 0. };
         let left = if input.pressed(KeyCode::A) { 1. } else { 0. };
 
+        let current_direction = match (up, down, right, left) {
+            (1., 0., 0., 0.) => CharacterDirection::N,
+            (1., 0., 1., 0.) => CharacterDirection::NE,
+            (0., 0., 1., 0.) => CharacterDirection::E,
+            (0., 1., 1., 0.) => CharacterDirection::SE,
+            (0., 1., 0., 0.) => CharacterDirection::S,
+            (0., 1., 0., 1.) => CharacterDirection::SW,
+            (0., 0., 0., 1.) => CharacterDirection::W,
+            (1., 0., 0., 1.) => CharacterDirection::NW,
+            _ => CharacterDirection::LAST,
+        };
+
+        config.timer.tick(time.delta());
+        let update: bool = config.timer.just_finished();
+
+        match &current_direction {
+            CharacterDirection::N => {
+                animate(16, 19, &mut tas, &update);
+            },
+            CharacterDirection::NE => {
+                animate(20, 23, &mut tas, &update);
+            },
+            CharacterDirection::E => {
+                animate(24, 27, &mut tas, &update);
+            },
+            CharacterDirection::SE => {
+                animate(28, 31, &mut tas, &update);
+            },
+            CharacterDirection::S => {
+                animate(0, 3, &mut tas, &update);
+            },
+            CharacterDirection::SW => {
+                animate(4, 7, &mut tas, &update);
+            },
+            CharacterDirection::W => {
+                animate(8, 11, &mut tas, &update);
+            },
+            CharacterDirection::NW => {
+                animate(12, 15, &mut tas, &update);
+            },
+            _ => {
+                match tas.index {
+                    16..=19 => tas.index = 16,
+                    20..=23 => tas.index = 20,
+                    24..=27 => tas.index = 24,
+                    28..=31 => tas.index = 28,
+                    0..=3 => tas.index = 0,
+                    4..=7 => tas.index = 4,
+                    8..=11 => tas.index = 8,
+                    12..=15 => tas.index = 12,
+                    _ => (),
+                }
+            },
+        }
+
         velocity.linvel.x = (right - left) * 100.;
         velocity.linvel.y = (up - down) * 100.;
 
         // climber.climbing = true;
 
-        config.timer.tick(time.delta());
-        let update: bool = config.timer.just_finished();
+        // config.timer.tick(time.delta());
+        // let update: bool = config.timer.just_finished();
 
-        if input.pressed(KeyCode::W) && input.pressed(KeyCode::D) {
-            animate(20, 23, &mut tas, &update);
-        } else if input.pressed(KeyCode::W) && input.pressed(KeyCode::A) {
-            animate(12, 15, &mut tas, &update);
-        } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::D) {
-            animate(28, 31, &mut tas, &update);
-        } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::A) {
-            animate(4, 7, &mut tas, &update);
-        } else if input.pressed(KeyCode::W) {
-            animate(16, 19, &mut tas, &update);
-        } else if input.pressed(KeyCode::S) {
-            animate(0, 3, &mut tas, &update);
-        } else if input.pressed(KeyCode::D) {
-            animate(24, 27, &mut tas, &update);
-        } else if input.pressed(KeyCode::A) {
-            animate(8, 11, &mut tas, &update);
-        }
+        // if input.pressed(KeyCode::W) && input.pressed(KeyCode::D) {
+        //     animate(20, 23, &mut tas, &update);
+        // } else if input.pressed(KeyCode::W) && input.pressed(KeyCode::A) {
+        //     animate(12, 15, &mut tas, &update);
+        // } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::D) {
+        //     animate(28, 31, &mut tas, &update);
+        // } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::A) {
+        //     animate(4, 7, &mut tas, &update);
+        // } else if input.pressed(KeyCode::W) {
+        //     animate(16, 19, &mut tas, &update);
+        // } else if input.pressed(KeyCode::S) {
+        //     animate(0, 3, &mut tas, &update);
+        // } else if input.pressed(KeyCode::D) {
+        //     animate(24, 27, &mut tas, &update);
+        // } else if input.pressed(KeyCode::A) {
+        //     animate(8, 11, &mut tas, &update);
+        // } else {
+        //     match current_direction {
+        //         CharacterDirection::N => tas.index = 16,
+        //         CharacterDirection::NE => tas.index = 20,
+        //         CharacterDirection::E => tas.index = 24,
+        //         CharacterDirection::SE => tas.index = 28,
+        //         CharacterDirection::S => tas.index = 0,
+        //         CharacterDirection::SW => tas.index = 4,
+        //         CharacterDirection::W => tas.index = 8,
+        //         CharacterDirection::NW => tas.index = 12,
+        //         _ => (),
+        //     }
+        // }
 
         // if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
         //     velocity.linvel.y = 500.;
