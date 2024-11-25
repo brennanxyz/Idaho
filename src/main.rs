@@ -2,36 +2,42 @@
 // Please run with `--release`.
 
 use bevy::prelude::*;
-// use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 use bevy_ecs_ldtk::prelude::*;
 
 use bevy_rapier2d::prelude::*;
 
-mod components;
-mod systems;
+mod camera;
+mod character;
+mod climbing;
+/// Bundles for auto-loading Rapier colliders as part of the level
+mod colliders;
+mod enemy;
+/// Handles initialization and switching levels
+mod game_flow;
+mod ground_detection;
+mod inventory;
+mod misc_objects;
+mod player;
+mod walls;
 
 fn main() {
-    // let mut window_plugin = WindowPlugin::default();
-    // window_plugin.primary_window = Some(Window {
-    //     title: "Game".to_string(),
-    //     canvas: Some("#game_canvas".to_string()),
-    //     ..Default::default()
-    // });
-    // let w_plugins = DefaultPlugins.set(window_plugin);
-    // w_plugins.add(ImagePlugin::default_nearest());
-
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
-        // .add_plugins(w_plugins)
-        .add_plugins(LdtkPlugin)
-        .add_plugins(RapierPhysicsPlugin::<NoUserData>::pixels_per_meter(100.0))
-        // .add_plugin(LogDiagnosticsPlugin::default())
-        // .add_plugin(FrameTimeDiagnosticsPlugin::default())
-        // Required to prevent race conditions between bevy_ecs_ldtk's and bevy_rapier's systems
-        //.configure_set(LdtkSystemSet::ProcessApi.before(PhysicsSet::SyncBackend))
+        .add_plugins((
+            LdtkPlugin,
+            RapierPhysicsPlugin::<NoUserData>::pixels_per_meter(100.0),
+        ))
         .insert_resource(RapierConfiguration {
-            // gravity: Vec2::new(0.0, 0.0),
-            ..Default::default()
+            gravity: Vec2::new(0.0, 0.0),
+            physics_pipeline_active: true,
+            query_pipeline_active: true,
+            timestep_mode: TimestepMode::Variable {
+                max_dt: 1.0 / 60.0,
+                time_scale: 1.0,
+                substeps: 1,
+            },
+            scaled_shape_subdivision: 10,
+            force_update_from_transform_changes: false,
         })
         .insert_resource(LevelSelection::Uid(0))
         .insert_resource(LdtkSettings {
@@ -41,19 +47,15 @@ fn main() {
             set_clear_color: SetClearColor::FromLevelBackground,
             ..Default::default()
         })
-        .add_systems(Startup, systems::setup)
-        .add_systems(Update, systems::spawn_wall_collision)
-        .add_systems(Update, systems::movement)
-        .add_systems(Update, systems::camera_fit_inside_current_level)
-        .add_systems(Update, systems::update_level_selection)
-        .add_systems(Update, systems::dbg_player_items)
-        .add_systems(Update, systems::restart_level)
-        .register_ldtk_int_cell::<components::WallBundle>(1)
-        .register_ldtk_int_cell::<components::LadderBundle>(2)
-        .register_ldtk_int_cell::<components::WallBundle>(3)
-        .register_ldtk_entity::<components::PlayerBundle>("Player")
-        //.register_ldtk_entity::<components::MobBundle>("Mob")
-        //.register_ldtk_entity::<components::ChestBundle>("Chest")
-        //.register_ldtk_entity::<components::PumpkinsBundle>("Pumpkins")
+        .add_plugins(game_flow::GameFlowPlugin)
+        .add_plugins(walls::WallPlugin)
+        .add_plugins(ground_detection::GroundDetectionPlugin)
+        .add_plugins(climbing::ClimbingPlugin)
+        .add_plugins(player::PlayerPlugin)
+        .add_plugins(enemy::EnemyPlugin)
+        .add_plugins(character::CharacterPlugin)
+        .add_systems(Update, inventory::dbg_print_inventory)
+        .add_systems(Update, camera::camera_fit_inside_current_level)
+        .add_plugins(misc_objects::MiscObjectsPlugin)
         .run();
 }
