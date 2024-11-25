@@ -118,45 +118,6 @@ pub fn movement(
 
         velocity.linvel.x = (right - left) * 100.;
         velocity.linvel.y = (up - down) * 100.;
-
-        // climber.climbing = true;
-
-        // config.timer.tick(time.delta());
-        // let update: bool = config.timer.just_finished();
-
-        // if input.pressed(KeyCode::W) && input.pressed(KeyCode::D) {
-        //     animate(20, 23, &mut tas, &update);
-        // } else if input.pressed(KeyCode::W) && input.pressed(KeyCode::A) {
-        //     animate(12, 15, &mut tas, &update);
-        // } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::D) {
-        //     animate(28, 31, &mut tas, &update);
-        // } else if input.pressed(KeyCode::S) && input.pressed(KeyCode::A) {
-        //     animate(4, 7, &mut tas, &update);
-        // } else if input.pressed(KeyCode::W) {
-        //     animate(16, 19, &mut tas, &update);
-        // } else if input.pressed(KeyCode::S) {
-        //     animate(0, 3, &mut tas, &update);
-        // } else if input.pressed(KeyCode::D) {
-        //     animate(24, 27, &mut tas, &update);
-        // } else if input.pressed(KeyCode::A) {
-        //     animate(8, 11, &mut tas, &update);
-        // } else {
-        //     match current_direction {
-        //         CharacterDirection::N => tas.index = 16,
-        //         CharacterDirection::NE => tas.index = 20,
-        //         CharacterDirection::E => tas.index = 24,
-        //         CharacterDirection::SE => tas.index = 28,
-        //         CharacterDirection::S => tas.index = 0,
-        //         CharacterDirection::SW => tas.index = 4,
-        //         CharacterDirection::W => tas.index = 8,
-        //         CharacterDirection::NW => tas.index = 12,
-        //         _ => (),
-        //     }
-        // }
-
-        // if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
-        //     velocity.linvel.y = 500.;
-        // }
     }
 }
 

@@ -5,7 +5,7 @@ use std::collections::HashSet;
 
 use bevy_rapier2d::prelude::*;
 
-#[derive(Clone, Debug, Default, Bundle, LdtkIntCell)]
+#[derive(Clone, Default, Bundle, LdtkIntCell)]
 pub struct ColliderBundle {
     pub collider: Collider,
     pub rigid_body: RigidBody,
@@ -104,10 +104,8 @@ pub struct Climber {
 #[derive(Clone, Default, Bundle, LdtkEntity)]
 pub struct PlayerBundle {
     #[sprite_sheet_bundle("main_char_sheet.png", 20., 17., 4, 8, 0., 0., 0)]
-    #[bundle]
     pub sprite_sheet_bundle: SpriteSheetBundle,
     #[from_entity_instance]
-    #[bundle]
     pub collider_bundle: ColliderBundle,
     pub player: Player,
     #[worldly]
