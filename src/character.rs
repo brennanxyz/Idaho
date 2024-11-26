@@ -1,8 +1,13 @@
+use crate::{
+    colliders::ColliderBundle,
+    misc_objects::{FloatingInteractionText, spawn_interaction_indicator},
+};
+
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 // use bevy_rapier2d::dynamics::Velocity;
 
-use crate::colliders::ColliderBundle;
+
 
 #[derive(Copy, Clone, Eq, PartialEq, Debug, Default, Component)]
 pub struct Character;
@@ -52,6 +57,16 @@ impl LdtkEntity for CharacterBundle {
     }
 }
 
+fn spawn_characters(
+    mut commands: Commands,
+    character_query: Query<Entity, Added<Character>>,
+    asset_server: Res<AssetServer>,
+) {
+    for entity in character_query.iter() {
+        spawn_interaction_indicator(&mut commands, &asset_server, entity);
+    }
+}
+
 // impl From<&EntityInstance> for CharacterBundle {
 //     fn from(entity_instance: &EntityInstance) -> CharacterBundle {
 //         let sprite_sheet = entity_instance.get_string_field("sprite_sheet");
@@ -76,6 +91,7 @@ pub struct CharacterPlugin;
 
 impl Plugin for CharacterPlugin {
     fn build(&self, app: &mut App) {
-        app.register_ldtk_entity::<CharacterBundle>("Character");
+        app.register_ldtk_entity::<CharacterBundle>("Character")
+            .add_systems(Update, spawn_characters);
     }
 }
