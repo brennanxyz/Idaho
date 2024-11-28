@@ -185,7 +185,7 @@ pub fn spawn_wall_collision(
 /// Plugin which spawns walls on appropriate LDtk int cells,
 /// then merges them together to reduce physics load.
 ///
-/// Walls are hardcoded as int cell values 1 (dirt) and 3 (stone).
+/// Walls are hardcoded as int cell values 1 (dirt) and 3 (stone) and 4 (water).
 pub struct WallPlugin;
 
 impl Plugin for WallPlugin {

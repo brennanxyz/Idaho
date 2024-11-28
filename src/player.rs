@@ -1,9 +1,11 @@
+use tracing::{event, Level};
+
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 use bevy_rapier2d::dynamics::Velocity;
 
 use crate::{climbing::Climber, inventory::Inventory};
-use crate::{colliders::ColliderBundle, ground_detection::GroundDetection};
+use crate::colliders::ColliderBundle;
 
 #[derive(Eq, PartialEq)]
 pub enum CharacterDirection {
@@ -26,34 +28,79 @@ pub struct AnimationTimer {
 #[derive(Copy, Clone, Eq, PartialEq, Debug, Default, Component)]
 pub struct Player;
 
-#[derive(Clone, Default, Bundle, LdtkEntity)]
+// #[derive(Clone, Default, Bundle, LdtkEntity)]
+// pub struct PlayerBundle {
+//     #[sprite_sheet_bundle("main_char_sheet.png", 20, 17, 4, 8, 0, 0, 0)]
+//     pub sprite_bundle: LdtkSpriteSheetBundle,
+//     #[from_entity_instance]
+//     pub collider_bundle: ColliderBundle,
+//     pub player: Player,
+//     #[worldly]
+//     pub worldly: Worldly,
+//     pub climber: Climber,
+//     // Build Items Component manually by using `impl From<&EntityInstance>`
+//     #[from_entity_instance]
+//     items: Inventory,
+//     // The whole EntityInstance can be stored directly as an EntityInstance component
+//     #[from_entity_instance]
+//     entity_instance: EntityInstance,
+//     // #[from_entity_instance]
+// }
+
+#[derive(Clone, Default, Bundle)]
 pub struct PlayerBundle {
-    #[sprite_sheet_bundle("main_char_sheet.png", 20, 17, 4, 8, 0, 0, 0)]
-    pub sprite_bundle: LdtkSpriteSheetBundle,
-    #[from_entity_instance]
+    pub sprite_sheet_bundle: LdtkSpriteSheetBundle,
     pub collider_bundle: ColliderBundle,
     pub player: Player,
-    #[worldly]
     pub worldly: Worldly,
     pub climber: Climber,
-    pub ground_detection: GroundDetection,
-
-    // Build Items Component manually by using `impl From<&EntityInstance>`
-    #[from_entity_instance]
-    items: Inventory,
-
-    // The whole EntityInstance can be stored directly as an EntityInstance component
-    #[from_entity_instance]
+    pub inventory: Inventory,
     entity_instance: EntityInstance,
+}
+
+impl LdtkEntity for PlayerBundle {
+    fn bundle_entity(
+        entity_instance: &EntityInstance,
+        _: &LayerInstance,
+        _: Option<&Handle<Image>>,
+        _: Option<&TilesetDefinition>,
+        asset_server: &AssetServer,
+        texture_atlases: &mut Assets<TextureAtlasLayout>,
+    ) -> PlayerBundle {
+        let backup = "main_char_sheet.png".to_string();
+        let sprite_sheet = LdtkFields::get_string_field(entity_instance, "sprite_sheet")
+            .unwrap_or(&backup);
+        let layout = TextureAtlasLayout::from_grid(UVec2::new(20, 17), 4, 8, None, None);
+        let atlas_layout = texture_atlases.add(layout);
+
+        PlayerBundle {
+            sprite_sheet_bundle: LdtkSpriteSheetBundle {
+                sprite_bundle: SpriteBundle {
+                    texture: asset_server.load(sprite_sheet),
+                    transform: Transform::from_xyz(0.0, 0.0, 0.0),
+                    ..default()
+                },
+                texture_atlas: atlas_layout.into(),
+                ..default()
+            },
+            collider_bundle: ColliderBundle::from(entity_instance),
+            player: Player,
+            worldly: Worldly::from_entity_info(entity_instance),
+            climber: Climber::default(),
+            inventory: Inventory::default(),
+            entity_instance: entity_instance.clone(),
+            // velocity: Velocity::default(),
+        }
+    }
 }
 
 pub fn player_movement(
     input: Res<ButtonInput<KeyCode>>,
     time: Res<Time>,
     mut config: ResMut<AnimationTimer>,
-    mut query: Query<(&mut Velocity, &mut Climber, &GroundDetection, &mut TextureAtlas), With<Player>>,
+    mut query: Query<(&mut Velocity, &mut Climber, &mut TextureAtlas), With<Player>>,
 ) {
-    for (mut velocity, mut climber, ground_detection, mut tas) in &mut query {
+    for (mut velocity, mut climber, mut tas) in &mut query {
         // let right = if input.pressed(KeyCode::KeyD) { 1. } else { 0. };
         // let left = if input.pressed(KeyCode::KeyA) { 1. } else { 0. };
         let up = if input.pressed(KeyCode::KeyW) { 1. } else { 0. };
@@ -72,8 +119,6 @@ pub fn player_movement(
             (1., 0., 0., 1.) => CharacterDirection::NW,
             _ => CharacterDirection::LAST,
         };
-
-        
 
         config.timer.tick(time.delta());
         let update: bool = config.timer.just_finished();
@@ -136,7 +181,7 @@ pub fn player_movement(
             velocity.linvel.y = (up - down) * 200.;
         }
 
-        if input.just_pressed(KeyCode::Space) && (ground_detection.on_ground || climber.climbing) {
+        if input.just_pressed(KeyCode::Space) && (climber.climbing) {
             velocity.linvel.y = 500.;
             climber.climbing = false;
         }
@@ -157,5 +202,6 @@ impl Plugin for PlayerPlugin {
     fn build(&self, app: &mut App) {
         app.add_systems(Update, player_movement)
             .register_ldtk_entity::<PlayerBundle>("Player");
+        event!(Level::INFO, "Player plugin registered");
     }
 }

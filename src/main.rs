@@ -1,5 +1,5 @@
-// This example shows off a more in-depth implementation of a game with `bevy_ecs_ldtk`.
-// Please run with `--release`.
+use tracing::{event, Level};
+use tracing_subscriber::fmt::writer::MakeWriterExt;
 
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
@@ -13,13 +13,22 @@ mod colliders;
 mod enemy;
 /// Handles initialization and switching levels
 mod game_flow;
-mod ground_detection;
+// mod ground_detection;
 mod inventory;
 mod misc_objects;
 mod player;
 mod walls;
 
 fn main() {
+    // Set up logging
+    let logfile = tracing_appender::rolling::hourly("./logs", "prefix.log");
+    let stdout = std::io::stdout.with_max_level(tracing::Level::INFO);
+    tracing_subscriber::fmt()
+        .pretty()
+        .with_writer(stdout.and(logfile))
+        .init();
+    event!(Level::INFO, "Launching...");
+
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
         .add_plugins((
@@ -48,7 +57,7 @@ fn main() {
         })
         .add_plugins(game_flow::GameFlowPlugin)
         .add_plugins(walls::WallPlugin)
-        .add_plugins(ground_detection::GroundDetectionPlugin)
+        // .add_plugins(ground_detection::GroundDetectionPlugin)
         .add_plugins(climbing::ClimbingPlugin)
         .add_plugins(player::PlayerPlugin)
         .add_plugins(enemy::EnemyPlugin)

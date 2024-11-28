@@ -113,7 +113,7 @@ pub fn spawn_interaction_indicator(
             },
             FloatingInteractionText {
                 offset: Vec3::new(0.0, 14.0, 0.0),
-                trigger_distance: 35.0,
+                trigger_distance: 45.0,
                 key_prompt: "E".to_string(),
             },
             InteractionIndicator::default(),
