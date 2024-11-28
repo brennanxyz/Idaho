@@ -1,27 +1,20 @@
 use crate::{
     colliders::ColliderBundle,
-    misc_objects::{FloatingInteractionText, spawn_interaction_indicator},
+    misc_objects::spawn_interaction_indicator,
 };
 
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
-// use bevy_rapier2d::dynamics::Velocity;
-
-
 
 #[derive(Copy, Clone, Eq, PartialEq, Debug, Default, Component)]
 pub struct Character;
 
 #[derive(Clone, Default, Bundle)]
 pub struct CharacterBundle {
-    // #[sprite_sheet_bundle]
     pub sprite_sheet_bundle: LdtkSpriteSheetBundle,
-    // #[from_entity_instance]
     pub collider_bundle: ColliderBundle,
     pub character: Character,
-    // #[worldly]
     pub worldly: Worldly,
-    // pub velocity: Velocity,
 }
 
 impl LdtkEntity for CharacterBundle {
@@ -51,8 +44,7 @@ impl LdtkEntity for CharacterBundle {
             },
             collider_bundle: ColliderBundle::from(entity_instance),
             character: Character,
-            worldly: Worldly::default(),
-            // velocity: Velocity::default(),
+            worldly: Worldly::from_entity_info(entity_instance),
         }
     }
 }
@@ -66,26 +58,6 @@ fn spawn_characters(
         spawn_interaction_indicator(&mut commands, &asset_server, entity);
     }
 }
-
-// impl From<&EntityInstance> for CharacterBundle {
-//     fn from(entity_instance: &EntityInstance) -> CharacterBundle {
-//         let sprite_sheet = entity_instance.get_string_field("sprite_sheet");
-        
-//         CharacterBundle {
-//             sprite_bundle: LdtkSpriteSheetBundle {
-//                 sprite_sheet_bundle: SpriteSheetBundle {
-//                     texture_atlas: asset_server.load(sprite_sheet),
-//                     transform: Transform::from_xyz(0.0, 0.0, 0.0),
-//                     ..default()
-//                 },
-//                 ..default()
-//             },
-//             collider_bundle: ColliderBundle::from(entity_instance),
-//             character: Character,
-//             worldly: Worldly::from(entity_instance),
-//         }
-//     }
-// }
 
 pub struct CharacterPlugin;
 

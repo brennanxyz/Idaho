@@ -28,25 +28,6 @@ pub struct AnimationTimer {
 #[derive(Copy, Clone, Eq, PartialEq, Debug, Default, Component)]
 pub struct Player;
 
-// #[derive(Clone, Default, Bundle, LdtkEntity)]
-// pub struct PlayerBundle {
-//     #[sprite_sheet_bundle("main_char_sheet.png", 20, 17, 4, 8, 0, 0, 0)]
-//     pub sprite_bundle: LdtkSpriteSheetBundle,
-//     #[from_entity_instance]
-//     pub collider_bundle: ColliderBundle,
-//     pub player: Player,
-//     #[worldly]
-//     pub worldly: Worldly,
-//     pub climber: Climber,
-//     // Build Items Component manually by using `impl From<&EntityInstance>`
-//     #[from_entity_instance]
-//     items: Inventory,
-//     // The whole EntityInstance can be stored directly as an EntityInstance component
-//     #[from_entity_instance]
-//     entity_instance: EntityInstance,
-//     // #[from_entity_instance]
-// }
-
 #[derive(Clone, Default, Bundle)]
 pub struct PlayerBundle {
     pub sprite_sheet_bundle: LdtkSpriteSheetBundle,
@@ -166,24 +147,10 @@ pub fn player_movement(
         velocity.linvel.x = (right - left) * 100.;
         velocity.linvel.y = (up - down) * 100.;
 
-        // velocity.linvel.x = (right - left) * 200.;
-
         if climber.intersecting_climbables.is_empty() {
             climber.climbing = false;
         } else if input.just_pressed(KeyCode::KeyW) || input.just_pressed(KeyCode::KeyS) {
             climber.climbing = true;
-        }
-
-        if climber.climbing {
-            let up = if input.pressed(KeyCode::KeyW) { 1. } else { 0. };
-            let down = if input.pressed(KeyCode::KeyS) { 1. } else { 0. };
-
-            velocity.linvel.y = (up - down) * 200.;
-        }
-
-        if input.just_pressed(KeyCode::Space) && (climber.climbing) {
-            velocity.linvel.y = 500.;
-            climber.climbing = false;
         }
     }
 }

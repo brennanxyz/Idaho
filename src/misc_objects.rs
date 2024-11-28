@@ -4,24 +4,22 @@ use bevy::prelude::*;
 pub struct MiscObjectsPlugin;
 
 #[derive(Component)]
-pub struct FloatingInteractionText {
-    pub offset: Vec3,
+pub struct FloatingInteractionIndicator {
     pub trigger_distance: f32,
-    pub key_prompt: String,
 }
 
 pub fn update_interaction_indicators(
-    mut commands: Commands,
-    mut text_query: Query<(Entity, &Parent, &mut Visibility, &FloatingInteractionText)>,
+    mut _commands: Commands,
+    mut text_query: Query<(Entity, &Parent, &mut Visibility, &FloatingInteractionIndicator)>,
     player_query: Query<&Transform, With<Player>>,
     character_query: Query<&Transform, With<Character>>,
 ) {
     if let Ok(player_transform) = player_query.get_single() {
-        for (_text_entity, parent, mut visibility, interaction_text) in text_query.iter_mut() {
+        for (_text_entity, parent, mut visibility, interaction_indicator) in text_query.iter_mut() {
             if let Ok(character_transform) = character_query.get(parent.get()) {
                 let distance = player_transform.translation.distance(character_transform.translation);
                 
-                *visibility = if distance <= interaction_text.trigger_distance {
+                *visibility = if distance <= interaction_indicator.trigger_distance {
                     Visibility::Visible
                 } else {
                     Visibility::Hidden
@@ -111,10 +109,8 @@ pub fn spawn_interaction_indicator(
                 visibility: Visibility::Hidden,
                 ..default()
             },
-            FloatingInteractionText {
-                offset: Vec3::new(0.0, 14.0, 0.0),
+            FloatingInteractionIndicator{
                 trigger_distance: 45.0,
-                key_prompt: "E".to_string(),
             },
             InteractionIndicator::default(),
         ));

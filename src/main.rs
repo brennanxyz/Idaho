@@ -13,8 +13,8 @@ mod colliders;
 mod enemy;
 /// Handles initialization and switching levels
 mod game_flow;
-// mod ground_detection;
 mod inventory;
+mod menu;
 mod misc_objects;
 mod player;
 mod walls;
@@ -57,13 +57,17 @@ fn main() {
         })
         .add_plugins(game_flow::GameFlowPlugin)
         .add_plugins(walls::WallPlugin)
-        // .add_plugins(ground_detection::GroundDetectionPlugin)
         .add_plugins(climbing::ClimbingPlugin)
         .add_plugins(player::PlayerPlugin)
         .add_plugins(enemy::EnemyPlugin)
         .add_plugins(character::CharacterPlugin)
+        .add_plugins(misc_objects::MiscObjectsPlugin)
+        .add_plugins(menu::MenuPlugin)
+
         .add_systems(Update, inventory::dbg_print_inventory)
         .add_systems(Update, camera::camera_fit_inside_current_level)
-        .add_plugins(misc_objects::MiscObjectsPlugin)
+        .add_systems(Update, menu::pause_physics.run_if(in_state(menu::GameState::Paused)))
+        .add_systems(OnEnter(menu::GameState::Playing), menu::resume_physics)
+        
         .run();
 }
