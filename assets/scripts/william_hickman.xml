@@ -1,0 +1,28 @@
+<interactions>
+    <interaction>
+        <id>0</id>
+        <text>
+        I think I can lick it, Harry. You double checked the list,\n
+        right?
+        </text>
+        <responses>
+            <response>
+                <id>0</id>
+                <text>
+                Yes, I did. I'm sure it's all there.
+                </text>
+            </response>
+            <response>
+                <id>1</id>
+                <text>
+                I'm pretty damn sure, yeah.
+                </text>
+            </response>
+            <response>
+                <id>2</id>
+                <text>
+                I'm not sure. I'll check it again.
+                </text>
+            </response>
+    </interaction>
+</interactions>
