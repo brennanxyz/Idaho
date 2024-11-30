@@ -4,8 +4,12 @@ use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 use bevy_rapier2d::dynamics::Velocity;
 
-use crate::{climbing::Climber, inventory::Inventory};
-use crate::colliders::ColliderBundle;
+use crate::{
+    climbing::Climber, 
+    colliders::ColliderBundle,
+    inventory::Inventory,
+    timeline::Timeline,
+};
 
 #[derive(Eq, PartialEq)]
 pub enum CharacterDirection {
@@ -36,6 +40,7 @@ pub struct PlayerBundle {
     pub worldly: Worldly,
     pub climber: Climber,
     pub inventory: Inventory,
+    pub timeline: Timeline,
     entity_instance: EntityInstance,
 }
 
@@ -69,6 +74,7 @@ impl LdtkEntity for PlayerBundle {
             worldly: Worldly::from_entity_info(entity_instance),
             climber: Climber::default(),
             inventory: Inventory::default(),
+            timeline: Timeline::from(entity_instance),
             entity_instance: entity_instance.clone(),
             // velocity: Velocity::default(),
         }

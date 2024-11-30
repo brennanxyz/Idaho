@@ -1,0 +1,633 @@
+  [2m2024-11-30T05:19:02.145144Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:19:02.149720Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:19:02.151782Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:19:02.238353Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:19:02.238615Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:19:02.888796Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:19:02.930561Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:19:03.047324Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:119
+
+  [2m2024-11-30T05:19:03.047480Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file[0m
+    [2;3mat[0m src/timeline.rs:139
+
+  [2m2024-11-30T05:21:58.773518Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:21:58.776823Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:21:58.778650Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:21:58.856285Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:21:58.856533Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:21:59.142446Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:21:59.184352Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:21:59.300113Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:119
+
+  [2m2024-11-30T05:21:59.300299Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `id`[0m
+    [2;3mat[0m src/timeline.rs:139
+
+  [2m2024-11-30T05:22:42.632845Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:22:42.637162Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:22:42.639575Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:22:42.725116Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:22:42.725370Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:22:42.979771Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:22:43.016816Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:22:43.147148Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:119
+
+  [2m2024-11-30T05:22:43.147341Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `actions`[0m
+    [2;3mat[0m src/timeline.rs:139
+
+  [2m2024-11-30T05:23:07.853036Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:23:07.856636Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:23:07.858405Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:23:07.933131Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:23:07.933394Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:23:08.231462Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:23:08.269547Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:23:08.378319Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:119
+
+  [2m2024-11-30T05:23:08.378486Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `id`[0m
+    [2;3mat[0m src/timeline.rs:139
+
+  [2m2024-11-30T05:23:46.801568Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:23:46.805758Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:23:46.807511Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:23:46.892808Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:23:46.893071Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:23:47.179082Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:23:47.216775Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:23:47.326509Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:119
+
+  [2m2024-11-30T05:23:47.326701Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `id`[0m
+    [2;3mat[0m src/timeline.rs:139
+
+  [2m2024-11-30T05:24:30.982717Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:24:30.986382Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:24:30.988184Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:24:31.069284Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:24:31.069539Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:24:31.362098Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:24:31.405692Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:24:31.518960Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:119
+
+  [2m2024-11-30T05:24:31.519214Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `name`[0m
+    [2;3mat[0m src/timeline.rs:139
+
+  [2m2024-11-30T05:26:21.815580Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:26:21.818887Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:26:21.820438Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:26:21.907210Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:26:21.907515Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:26:22.498193Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:26:22.548512Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:26:22.668643Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:120
+
+  [2m2024-11-30T05:26:22.668816Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `action`[0m
+    [2;3mat[0m src/timeline.rs:140
+
+  [2m2024-11-30T05:27:36.217250Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:27:36.220585Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:27:36.222312Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:27:36.307333Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:27:36.307584Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:27:36.942313Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:27:36.999366Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:27:37.120652Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:120
+
+  [2m2024-11-30T05:27:37.120850Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `name`[0m
+    [2;3mat[0m src/timeline.rs:140
+
+  [2m2024-11-30T05:29:26.146443Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:29:26.150698Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:29:26.152809Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:29:26.240467Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:29:26.240724Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:29:26.524719Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:29:26.562184Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:29:26.672538Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:120
+
+  [2m2024-11-30T05:29:26.672695Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `name`[0m
+    [2;3mat[0m src/timeline.rs:140
+
+  [2m2024-11-30T05:30:19.160511Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:30:19.163810Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:30:19.165376Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:30:19.244099Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:30:19.244383Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:30:19.529979Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:30:19.570253Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:30:19.681913Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:30:19.682103Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `name`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:31:05.623193Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:31:05.626614Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:31:05.628151Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:31:05.705752Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:31:05.705996Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:31:06.016681Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:31:06.058139Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:31:06.171726Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:31:06.171974Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `name`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:34:41.582700Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:34:41.585953Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:34:41.587533Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:34:41.670284Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:34:41.670535Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:34:41.995607Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:34:42.035533Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:34:42.152755Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:120
+
+  [2m2024-11-30T05:34:42.152903Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `text`[0m
+    [2;3mat[0m src/timeline.rs:140
+
+  [2m2024-11-30T05:35:01.571048Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:35:01.575798Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:35:01.578461Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:35:01.658008Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:35:01.658266Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:35:01.983967Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:35:02.025191Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:35:02.135637Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:120
+
+  [2m2024-11-30T05:35:02.135815Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `text`[0m
+    [2;3mat[0m src/timeline.rs:140
+
+  [2m2024-11-30T05:35:43.929636Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:35:43.933230Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:35:43.935120Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:35:44.018308Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:35:44.018582Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:35:44.320826Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:35:44.361629Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:35:44.476666Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:35:44.476837Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `text`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:36:00.831595Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:36:00.835918Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:36:00.838599Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:36:00.923008Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:36:00.923281Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:36:01.186942Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:36:01.225822Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:36:01.333275Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:36:01.333468Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `response`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:37:25.874559Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:37:25.877644Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:37:25.879196Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:37:25.957652Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:37:25.957914Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:37:26.466518Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:37:26.517576Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:37:26.638663Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:37:26.638821Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `text`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:37:52.822335Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:37:52.826380Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:37:52.828838Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:37:52.908616Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:37:52.908870Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:37:53.175954Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:37:53.212913Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:37:53.318783Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:37:53.318941Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `response`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:38:58.053321Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:38:58.057342Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:38:58.059884Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:38:58.143948Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:38:58.144198Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:38:58.406953Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:38:58.445745Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:38:58.555249Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:40:12.676973Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:40:12.680436Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:40:12.682259Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:40:12.760581Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:40:12.760836Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:40:13.031001Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:40:13.070949Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:40:13.189624Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:40:24.917234Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:40:24.922241Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:40:24.924415Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:40:25.005923Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:40:25.006176Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:40:25.337018Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:40:25.381098Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:40:25.495209Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:40:25.495368Z[0m [31mERROR[0m [1;31midaho::timeline[0m[31m: [31mError parsing file | custom: missing field `text`[0m
+    [2;3mat[0m src/timeline.rs:141
+
+  [2m2024-11-30T05:40:45.744159Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:40:45.748938Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:40:45.751231Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:40:45.829673Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:40:45.829962Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:40:46.121939Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:40:46.161665Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:40:46.275961Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:41:19.737294Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:41:19.741703Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:41:19.743935Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:41:19.828693Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:41:19.828954Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:41:20.169326Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:41:20.219674Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:41:20.333926Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:54:49.141599Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:54:49.145167Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:54:49.147093Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:54:49.236814Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:54:49.237069Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:54:50.233898Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:54:50.280276Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:54:50.403476Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded timeline file | harry_rickard.xml[0m
+    [2;3mat[0m src/timeline.rs:121
+
+  [2m2024-11-30T05:59:36.539819Z[0m [32m INFO[0m [1;32midaho[0m[32m: [32mLaunching...[0m
+    [2;3mat[0m src/main.rs:33
+
+  [2m2024-11-30T05:59:36.543430Z[0m [31mERROR[0m [1;31mbevy_log[0m[31m: [31mCould not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin.[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_log-0.14.2/src/lib.rs:241
+
+  [2m2024-11-30T05:59:36.545016Z[0m [32m INFO[0m [1;32mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[32m: [32mSystemInfo { os: "MacOS 15.0.1 ", kernel: "24.0.0", cpu: "Apple M2", core_count: "8", memory: "16.0 GiB" }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_diagnostic-0.14.2/src/system_information_diagnostics_plugin.rs:192
+
+  [2m2024-11-30T05:59:36.625240Z[0m [32m INFO[0m [1;32mwgpu_core::instance[0m[32m: [32mAdapter Metal AdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wgpu-core-0.21.1/src/instance.rs:796
+
+  [2m2024-11-30T05:59:36.625537Z[0m [32m INFO[0m [1;32mbevy_render::renderer[0m[32m: [32mAdapterInfo { name: "Apple M2", vendor: 0, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "", backend: Metal }[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_render-0.14.2/src/renderer/mod.rs:189
+
+  [2m2024-11-30T05:59:36.957461Z[0m [32m INFO[0m [1;32midaho::player[0m[32m: [32mPlayer plugin registered[0m
+    [2;3mat[0m src/player.rs:178
+
+  [2m2024-11-30T05:59:36.996489Z[0m [32m INFO[0m [1;32mbevy_winit::system[0m[32m: [32mCreating new window "App" (Entity { index: 0, generation: 1 })[0m
+    [2;3mat[0m /Users/brennanharris/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_winit-0.14.2/src/system.rs:58
+
+  [2m2024-11-30T05:59:37.112700Z[0m [33m WARN[0m [1;33midaho::timeline[0m[33m: [33mError opening file. Attempting init[0m
+    [2;3mat[0m src/timeline.rs:126
+
+  [2m2024-11-30T05:59:37.112795Z[0m [32m INFO[0m [1;32midaho::timeline[0m[32m: [32mLoaded init timeline file | harry_rickard_init.xml[0m
+    [2;3mat[0m src/timeline.rs:129
+

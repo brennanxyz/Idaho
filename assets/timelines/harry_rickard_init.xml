@@ -1,6 +1,20 @@
-<interactions>
-</interactions>
-<items>
-</items>
-<money>
-</money>
+<timeline>
+    <action>
+        <name>opening conversation william</name>
+        <text>This is the text</text>
+        <available_response>
+            <text>Sure</text>
+            <key>E</key>
+        </available_response>
+        <available_response>
+            <text>Nah</text>
+            <key>R</key>
+        </available_response>
+        <!-- <given_response>
+            <text>Sure</text>
+            <key>E</key>
+        </given_response> -->
+        <acknowledged>false</acknowledged>
+        <completed>false</completed>
+    </action>
+</timeline>

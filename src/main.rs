@@ -5,6 +5,8 @@ use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 use bevy_rapier2d::prelude::*;
 
+use bevy_common_assets::xml::XmlAssetPlugin;
+
 mod camera;
 mod character;
 mod climbing;
@@ -17,6 +19,7 @@ mod inventory;
 mod menu;
 mod misc_objects;
 mod player;
+mod timeline;
 mod walls;
 
 fn main() {
@@ -63,6 +66,8 @@ fn main() {
         .add_plugins(character::CharacterPlugin)
         .add_plugins(misc_objects::MiscObjectsPlugin)
         .add_plugins(menu::MenuPlugin)
+
+        .add_plugins(XmlAssetPlugin::<timeline::Timeline>::new(&["timelines/timeline.xml"]))
 
         .add_systems(Update, inventory::dbg_print_inventory)
         .add_systems(Update, camera::camera_fit_inside_current_level)
