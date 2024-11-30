@@ -1,6 +1,9 @@
 <timeline>
     <action>
         <name>opening conversation william</name>
+        <trigger>
+            <character_interaction>William Hickman</character_interaction>
+        </trigger>
         <text>This is the text</text>
         <available_response>
             <text>Sure</text>

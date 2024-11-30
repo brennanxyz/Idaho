@@ -72,6 +72,16 @@ impl Serialize for GameKeyCode {
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
+pub enum Trigger {
+    #[serde(rename = "complete_action")]
+    CompleteAction(String),
+    #[serde(rename = "character_interaction")]
+    CharacterInteraction(String),
+    #[serde(rename = "itme_interaction")]
+    ItemInteraction(String),
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
 pub struct Response {
     pub text: String,
     pub key: GameKeyCode,
@@ -80,6 +90,7 @@ pub struct Response {
 #[derive(Clone, Debug, Eq, PartialEq, Deserialize)]
 pub struct Action {
     pub name: String,
+    pub trigger: Trigger,
     pub depends_on: Option<String>,
     pub text: Option<String>,
     #[serde(rename = "available_response")]
@@ -98,6 +109,7 @@ pub struct Timeline {
 impl Timeline {
     pub fn from(entity_instance: &EntityInstance) -> Self {
         // attempt to load the timeline file for the entity instance
+        event!(Level::INFO, "Loading timeline file");
         let timeline_filename = match LdtkFields::get_string_field(entity_instance, "timeline") {
             Ok(filename) => filename,
             Err(_) => {
@@ -133,8 +145,7 @@ impl Timeline {
                         event!(Level::ERROR, "Error opening file.");
                         return Timeline { actions: vec![] };
                     }
-                };
-                return Timeline { actions: vec![] };
+                }
             }
         };
 
