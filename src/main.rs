@@ -13,11 +13,12 @@ mod climbing;
 /// Bundles for auto-loading Rapier colliders as part of the level
 mod colliders;
 mod enemy;
+mod events;
 /// Handles initialization and switching levels
 mod game_flow;
 mod inventory;
 mod menu;
-mod misc_objects;
+mod indicator;
 mod player;
 mod timeline;
 mod walls;
@@ -63,16 +64,19 @@ fn main() {
         .add_plugins(climbing::ClimbingPlugin)
         .add_plugins(player::PlayerPlugin)
         .add_plugins(enemy::EnemyPlugin)
+        .add_plugins(events::EventPlugin)
         .add_plugins(character::CharacterPlugin)
-        .add_plugins(misc_objects::MiscObjectsPlugin)
+        .add_plugins(indicator::IndicatorPlugin)
         .add_plugins(menu::MenuPlugin)
-
-        .add_plugins(XmlAssetPlugin::<timeline::Timeline>::new(&["timelines/timeline.xml"]))
-
+        .add_plugins(XmlAssetPlugin::<timeline::Timeline>::new(&[
+            "timelines/timeline.xml",
+        ]))
         .add_systems(Update, inventory::dbg_print_inventory)
         .add_systems(Update, camera::camera_fit_inside_current_level)
-        .add_systems(Update, menu::pause_physics.run_if(in_state(menu::GameState::Paused)))
+        .add_systems(
+            Update,
+            menu::pause_physics.run_if(in_state(menu::GameState::Paused)),
+        )
         .add_systems(OnEnter(menu::GameState::Playing), menu::resume_physics)
-        
         .run();
 }

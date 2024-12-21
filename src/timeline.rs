@@ -77,7 +77,7 @@ pub enum Trigger {
     CompleteAction(String),
     #[serde(rename = "character_interaction")]
     CharacterInteraction(String),
-    #[serde(rename = "itme_interaction")]
+    #[serde(rename = "item_interaction")]
     ItemInteraction(String),
 }
 

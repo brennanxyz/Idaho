@@ -1,9 +1,11 @@
 use crate::{
-    colliders::ColliderBundle,
-    misc_objects::spawn_interaction_indicator,
+    colliders::ColliderBundle, 
+    events::spawn_fixed_sprite, 
+    indicator::spawn_interaction_indicator,
+    player::Player,
 };
 
-use bevy::prelude::*;
+use bevy::{math::vec2, prelude::*};
 use bevy_ecs_ldtk::prelude::*;
 
 #[derive(Copy, Clone, Eq, PartialEq, Debug, Default, Component)]
@@ -56,6 +58,7 @@ fn spawn_characters(
 ) {
     for entity in character_query.iter() {
         spawn_interaction_indicator(&mut commands, &asset_server, entity);
+        spawn_fixed_sprite(&mut commands, entity);
     }
 }
 

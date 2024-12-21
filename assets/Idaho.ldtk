@@ -1895,7 +1895,7 @@
 						},
 						{
 							"__identifier": "Character",
-							"__grid": [20,8],
+							"__grid": [19,8],
 							"__pivot": [0.5,1],
 							"__tags": [],
 							"__tile": { "tilesetUid": 107, "x": 0, "y": 0, "w": 20, "h": 20 },
@@ -1904,7 +1904,7 @@
 							"width": 20,
 							"height": 20,
 							"defUid": 115,
-							"px": [328,144],
+							"px": [312,144],
 							"fieldInstances": [
 								{ "__identifier": "name", "__type": "String", "__value": "William Hickman", "__tile": null, "defUid": 121, "realEditorValues": [{
 									"id": "V_String",
@@ -1915,7 +1915,7 @@
 									"params": ["william_hickman_sheet.png"]
 								}] }
 							],
-							"__worldX": 328,
+							"__worldX": 312,
 							"__worldY": 144
 						}
 					]
