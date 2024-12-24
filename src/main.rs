@@ -20,6 +20,7 @@ mod inventory;
 mod menu;
 mod indicator;
 mod player;
+mod text;
 mod timeline;
 mod walls;
 

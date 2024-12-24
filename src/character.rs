@@ -1,6 +1,6 @@
 use crate::{
     colliders::ColliderBundle, 
-    events::spawn_fixed_sprite, 
+    events::spawn_event_indicator_sprite, 
     indicator::spawn_interaction_indicator,
     player::Player,
 };
@@ -58,7 +58,7 @@ fn spawn_characters(
 ) {
     for entity in character_query.iter() {
         spawn_interaction_indicator(&mut commands, &asset_server, entity);
-        spawn_fixed_sprite(&mut commands, entity);
+        spawn_event_indicator_sprite(&mut commands, &asset_server);
     }
 }
 
