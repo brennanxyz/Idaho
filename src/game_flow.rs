@@ -12,7 +12,9 @@ pub fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         ..Default::default()
     });
 
-    commands.insert_resource(AnimationTimer{timer: Timer::from_seconds(0.1, TimerMode::Repeating)})
+    commands.insert_resource(AnimationTimer {
+        timer: Timer::from_seconds(0.1, TimerMode::Repeating),
+    })
 }
 
 pub fn update_level_selection(
@@ -52,24 +54,11 @@ pub fn update_level_selection(
     }
 }
 
-pub fn restart_level(
-    mut commands: Commands,
-    level_query: Query<Entity, With<LevelIid>>,
-    input: Res<ButtonInput<KeyCode>>,
-) {
-    if input.just_pressed(KeyCode::KeyR) {
-        for level_entity in &level_query {
-            commands.entity(level_entity).insert(Respawn);
-        }
-    }
-}
-
 pub struct GameFlowPlugin;
 
 impl Plugin for GameFlowPlugin {
     fn build(&self, app: &mut App) {
         app.add_systems(Startup, setup)
-            .add_systems(Update, update_level_selection)
-            .add_systems(Update, restart_level);
+            .add_systems(Update, update_level_selection);
     }
 }

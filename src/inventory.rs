@@ -24,7 +24,7 @@ pub fn dbg_print_inventory(
     mut query: Query<(&Inventory, &EntityInstance), With<Player>>,
 ) {
     for (items, entity_instance) in &mut query {
-        if input.just_pressed(KeyCode::KeyP) {
+        if input.just_pressed(KeyCode::KeyI) {
             dbg!(&items);
             dbg!(&entity_instance);
         }

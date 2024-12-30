@@ -36,30 +36,6 @@ pub fn update_interaction_indicators(
     }
 }
 
-// const CHAR_WIDTH: f32 = 6.0;
-// const CHAR_HEIGHT: f32 = 10.0;
-// const CHARS_PER_ROW: f32 = 10.0;
-
-// fn get_char_rect(c: char) -> Rect {
-//     let (row, col) = match c {
-//         'A'..='J' => (0, c as u8 - b'A'),
-//         'K'..='T' => (1, c as u8 - b'K'),
-//         'U'..='Z' => (2, c as u8 - b'U'),
-//         'a'..='j' => (3, c as u8 - b'a'),
-//         'k'..='t' => (4, c as u8 - b'k'),
-//         'u'..='z' => (5, c as u8 - b'u'),
-//         '0'..='9' => (6, c as u8 - b'0'),
-//         _ => (0, 0), // Default to first character for unknown inputs
-//     };
-
-//     Rect::new(
-//         col as f32 * CHAR_WIDTH,
-//         row as f32 * CHAR_HEIGHT,
-//         (col as f32 * CHAR_WIDTH) + CHAR_WIDTH,
-//         (row as f32 * CHAR_HEIGHT) + CHAR_HEIGHT,
-//     )
-// }
-
 #[derive(Component)]
 pub struct InteractionIndicator {
     pub timer: Timer,

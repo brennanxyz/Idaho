@@ -1,4 +1,4 @@
-use crate::{character::Character, player::Player, text::assemble_text_sprite};
+use crate::{character::Character, player::Player, text::spawn_text_sprite};
 use bevy::prelude::*;
 
 pub struct EventPlugin;
@@ -39,44 +39,41 @@ pub enum EventType {
     Acquire,
 }
 
-pub fn spawn_event_indicator_sprite(
-    commands: &mut Commands, 
-    asset_server: &Res<AssetServer>,
-) {
-    let words = assemble_text_sprite(asset_server, "Sphinx of black quartz, judge my vow.");
-    commands.spawn((
-        NodeBundle {
-            style: Style {
-                width: Val::Percent(100.0),
-                height: Val::Percent(100.0),
-                flex_direction: FlexDirection::Column,
-                align_items: AlignItems::Start,
-                justify_content: JustifyContent::End,
-                ..default()
-            },
-            // background_color: Color::srgba(0.0, 0.0, 0.0, 0.5).into(),
-            visibility: Visibility::Hidden,
-            ..default()
-        },
-        FixedEventIndicator {
-            trigger_distance: 45.0,
-        },
-
-    ))
-    .with_children(|parent | {
-        parent.spawn(
-            words
-        );
-    });
+pub fn spawn_event_indicator_sprite(commands: &mut Commands, asset_server: &Res<AssetServer>) {
+    spawn_text_sprite(
+        commands,
+        &asset_server,
+        "Sphinx of black quartz, judge my vow.",
+        Vec2::new(50.0, 50.0),
+    );
+    //commands.spawn((
+    //    NodeBundle {
+    //        style: Style {
+    //            width: Val::Percent(100.0),
+    //            height: Val::Percent(100.0),
+    //            flex_direction: FlexDirection::Column,
+    //            align_items: AlignItems::Start,
+    //            justify_content: JustifyContent::End,
+    //            ..default()
+    //        },
+    //        // background_color: Color::srgba(0.0, 0.0, 0.0, 0.5).into(),
+    //        visibility: Visibility::Hidden,
+    //        ..default()
+    //    },
+    //    FixedEventIndicator {
+    //        trigger_distance: 45.0,
+    //    },
+    //
+    //))
+    //.with_children(|parent | {
+    //    parent.spawn(
+    //        words
+    //    );
+    //});
 }
 
 impl Plugin for EventPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(
-            Update,
-            (
-                update_event_indicators,
-            ),
-        );
+        app.add_systems(Update, (update_event_indicators,));
     }
 }

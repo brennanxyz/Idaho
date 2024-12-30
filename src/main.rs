@@ -16,9 +16,9 @@ mod enemy;
 mod events;
 /// Handles initialization and switching levels
 mod game_flow;
+mod indicator;
 mod inventory;
 mod menu;
-mod indicator;
 mod player;
 mod text;
 mod timeline;
@@ -76,8 +76,12 @@ fn main() {
         .add_systems(Update, camera::camera_fit_inside_current_level)
         .add_systems(
             Update,
-            menu::pause_physics.run_if(in_state(menu::GameState::Paused)),
+            menu::pause_physics.run_if(in_state(menu::MenuState::MainMenu)),
         )
-        .add_systems(OnEnter(menu::GameState::Playing), menu::resume_physics)
+        .add_systems(
+            Update,
+            menu::pause_physics.run_if(in_state(menu::MenuState::Paused)),
+        )
+        .add_systems(OnEnter(menu::MenuState::Playing), menu::resume_physics)
         .run();
 }
